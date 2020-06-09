@@ -14,3 +14,4 @@ else
 	salary=0
         echo "Employee is not Present"
 fi
+echo $salary
