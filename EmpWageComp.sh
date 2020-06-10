@@ -2,12 +2,14 @@
 echo " Welcome to Employee Wage Computation Program"
 isPartTime=1
 isFullTime=2
-maxHrsInMonth=100
+maxHrsInMonth=4
 empRatePerHr=20
 numWorkingDays=20
 
 totalEmphr=0
 totalWorkingDays=0
+
+declare -A dailyWage
 
 function  getWorkHrs()
 {
@@ -37,8 +39,9 @@ do
 	empCheck=$(( RANDOM%3 ))
 	empHrs="$( getWorkHrs $empCheck )"
 	totalEmphr=$(( $totalEmphr+$empHrs ))
-	dailyWage[$totalWorkingDays]="$( getEmpWage $empHrs )"
+	dailyWage["Day"$totalWorkingDays]="$( getEmpWage $empHrs )"
 done
 
 totalSalary=$(( $totalEmphr*$empRatePerHr ))
 echo ${dailyWage[@]}
+echo ${!dailyWage[@]}
