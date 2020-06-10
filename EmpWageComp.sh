@@ -1,36 +1,33 @@
-#! /bin/bash -x   
+#! /bin/bash -x    
 echo " Welcome to Employee Wage Computation Program"
 isPartTime=1
 isFullTime=2
-maxHrsInMonth=4
+maxHrsInMonth=100
 empRatePerHr=20
 numWorkingDays=20
 
-totalWorkHours=0
+totalEmphr=0
 totalWorkingDays=0
 
-#randomCheck=$(( RANDOM%3 )) 	
-
-	case $randomCheck in
-		$isFullTime)
-			workHours=8
-			;;
-		$isPartTime)
-			workhours=4
-			;;
-		*)
-		workHours=0
-			;;
-esac
-echo $workHours
-
-while [[ $totalWorkHours -lt $maxHrsInMonth && $totalWorkingDays -lt $numWorkingDays  ]]
+while [[ $totalEmphr -lt $maxHrsInMonth && $totalWorkingDays -lt numWorkingDays ]] 	
 do
 	((totalWorkingDays++))
-#	workHours="$( $randomCheck $(( RANDOM%3 )) )"
-	totalWorkHours=$(( $totalWorkHours*$workHours ))
+	empCheck=$(( RANDOM%3 ))
+	case $empCheck in
+		$isFullTime)
+			empHrs=8
+			;;
+		$isPartTime)
+			empHrs=4
+			;;
+		*)
+		empHrs=0
+			;;
+	esac
+	totalEmphr=$(( $totalEmphr+$empHrs ))
 done
-totalSalary=$(( $totalWorkHours + $empRatePerHr ))
+
+totalSalary=$(( $totalEmphr*$empRatePerHr ))
 
 
 
