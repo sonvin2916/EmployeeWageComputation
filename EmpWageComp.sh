@@ -4,7 +4,7 @@ isPartTime=1
 isFullTime=2
 empRatePerHr=20
 
-randomCheck=$(( RANDOM%3 ))
+empCheck=$(( RANDOM%3 ))
 
 case $empCheck in
 	$isFullTime)
