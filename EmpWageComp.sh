@@ -1,6 +1,6 @@
 #! /bin/bash  -x
 echo " Welcome to Employee Wage Computation Program"
-isPartTime=1
+isPartTime=8
 isFullTime=2
 empRatePerHr=20
 
