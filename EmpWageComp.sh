@@ -8,9 +8,9 @@ numWorkingDays=20
 
 for (( day=1; day<=$numWorkingDays; day++ ))
 do
-	randomCheck=$(( RANDOM%3 )) 	
+	empCheck=$(( RANDOM%3 )) 	
 
-	case $randomCheck in
+	case $empCheck in
 		$isFullTime)
 			empHrs=8
 			;;
